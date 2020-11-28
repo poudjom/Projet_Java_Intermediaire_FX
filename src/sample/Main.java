@@ -6,8 +6,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.net.URL;
 import java.sql.ResultSet;
 
 public class Main extends Application {
@@ -15,13 +17,14 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../ionis/projet/vue/sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        //primaryStage.show();
+        primaryStage.setTitle("Création des classes");
+        primaryStage.setScene(new Scene(root, 293, 320));
+        primaryStage.show();
+        primaryStage.setResizable(false);
 
         // Exemple d'insertion dans la base de données
 
-        int retour;
+        /**int retour;
         String query;
 
         query = "INSERT INTO classe(CODECLASSE, LIBELLE) " +
@@ -53,7 +56,7 @@ public class Main extends Application {
 
         Matiere matiere = new Matiere("Maths", "Mathématiques", 12, "Je fais la mathématique");
         matiere.createMatiere(matiere);
-        System.out.println(retour);
+        System.out.println(retour);**/
     }
 
 
