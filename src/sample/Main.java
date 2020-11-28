@@ -1,6 +1,7 @@
 package sample;
 
-import ionis.projet.bd.DataMapping;
+import ionis.projet.model.DataMapping;
+import ionis.projet.controller.Matiere;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +14,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../ionis/projet/vue/sample.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
         //primaryStage.show();
@@ -50,6 +51,8 @@ public class Main extends Application {
         }
         dataMapping3.closeConnexion();
 
+        Matiere matiere = new Matiere("Maths", "Mathématiques", 12, "Je fais la mathématique");
+        matiere.createMatiere(matiere);
         System.out.println(retour);
     }
 

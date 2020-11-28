@@ -1,4 +1,4 @@
-package ionis.projet.bd;
+package ionis.projet.model;
 
 import java.sql.*;
 public class DataMapping {
