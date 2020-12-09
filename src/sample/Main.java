@@ -17,18 +17,18 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("../ionis/projet/vue/sample.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
-        //primaryStage.show();
+        primaryStage.show();
 
         // Exemple d'insertion dans la base de données
 
-        int retour;
-        String query;
-
-        query = "INSERT INTO classe(CODECLASSE, LIBELLE) " +
-                "VALUES ('M2INFO','Master2 Informatique')";
-        DataMapping dataMapping = new DataMapping();
-        retour = dataMapping.insertion(query);
-        dataMapping.closeConnexion();
+//        int retour;
+//        String query;
+//
+//        query = "INSERT INTO classe(CODECLASSE, LIBELLE) " +
+//                "VALUES ('M2INFO','Master2 Informatique')";
+//        DataMapping dataMapping = new DataMapping();
+//        retour = dataMapping.insertion(query);
+//        dataMapping.closeConnexion();
 
         // Exemple de suppression dans la base de données
 //        query = "Delete from classe ";
@@ -42,18 +42,22 @@ public class Main extends Application {
 //        retour = dataMapping2.modification(query);
 //        dataMapping2.closeConnexion();
 
-        query = "select * from classe where IDCLASSE > 2";
-        DataMapping dataMapping3 = new DataMapping();
-        ResultSet resultSet = dataMapping3.selection(query);
-        while (resultSet.next()){
-            System.out.println(resultSet.getString("CODECLASSE") + " => " +
-                    resultSet.getString("LIBELLE"));
-        }
-        dataMapping3.closeConnexion();
-
-        Matiere matiere = new Matiere("Maths", "Mathématiques", 12, "Je fais la mathématique");
-        matiere.createMatiere(matiere);
-        System.out.println(retour);
+//        query = "select * from classe where IDCLASSE > 2";
+//        DataMapping dataMapping3 = new DataMapping();
+//        ResultSet resultSet = dataMapping3.selection(query);
+//        while (resultSet.next()){
+//            System.out.println(resultSet.getString("CODECLASSE") + " => " +
+//                    resultSet.getString("LIBELLE"));
+//        }
+//        dataMapping3.closeConnexion();
+//
+//        Matiere matiere = new Matiere("Maths", "Mathématiques", 12, "Je fais la mathématique");
+//        matiere.createMatiere(matiere);
+//
+//        matiere.supprimerMatiere("2,3,5,6");
+//        Matiere matiere1 = new Matiere(7,"INFO", "Informatique", 54, "Je fais la mathématique");
+//        matiere1.modifierMatiere(matiere1);
+//        System.out.println(retour);
     }
 
 

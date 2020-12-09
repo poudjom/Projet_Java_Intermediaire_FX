@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<FlowPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ionis.projet.controller.Formseance">
+   <children>
+      <Pane prefHeight="346.0" prefWidth="399.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" layoutX="59.0" layoutY="97.0" text="Matière*" />
+            <Label alignment="CENTER_RIGHT" layoutX="25.0" layoutY="135.0" text="Date de début*" />
+            <Label alignment="CENTER_RIGHT" layoutX="42.0" layoutY="137.0" text="Date de fin*" visible="false" />
+            <Label layoutX="18.0" layoutY="170.0" text="Heure de début*" />
+            <TextField fx:id="idHeureDebut" layoutX="117.0" layoutY="166.0" prefHeight="25.0" prefWidth="69.0" promptText="        :  " />
+            <Button fx:id="btCreerValidation" layoutX="138.0" layoutY="283.0" mnemonicParsing="false" onAction="#onCreerValidation" text="Créer" />
+            <TextField fx:id="id" layoutX="106.0" layoutY="25.0" visible="false" />
+            <Button fx:id="idModifierValidation" layoutX="217.0" layoutY="283.0" mnemonicParsing="false" onAction="#onModifierValidation" text="Modifier" />
+            <Pane layoutX="-1.0" prefHeight="34.0" prefWidth="400.0" style="-fx-background-color: #04B431;">
+               <children>
+                  <Label fx:id="idEntete" layoutX="151.0" layoutY="9.0" text="Séance" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ComboBox fx:id="idMatiere" layoutX="117.0" layoutY="93.0" prefHeight="25.0" prefWidth="189.0" promptText="Sélectionner une matière" />
+            <Label layoutX="18.0" layoutY="208.0" text="Heure de début*" />
+            <TextField fx:id="idHeureFin" layoutX="117.0" layoutY="204.0" prefHeight="25.0" prefWidth="69.0" promptText="        :  " />
+            <Label alignment="CENTER_RIGHT" layoutX="28.0" layoutY="242.0" text="Commentaires" />
+            <TextField fx:id="idCommentaire" layoutX="116.0" layoutY="238.0" prefHeight="25.0" prefWidth="230.0" />
+            <DatePicker fx:id="idDateDebut" layoutX="117.0" layoutY="131.0" />
+            <DatePicker fx:id="idDateFin" layoutX="118.0" layoutY="133.0" visible="false" />
+            <TextField fx:id="idSeance" layoutX="312.0" layoutY="99.0" prefHeight="25.0" prefWidth="69.0" visible="false" />
+            <Label alignment="CENTER_RIGHT" layoutX="64.0" layoutY="60.0" text="Classe*" />
+            <ComboBox fx:id="idClasse" layoutX="115.0" layoutY="56.0" prefHeight="25.0" prefWidth="189.0" promptText="Sélectionner une classe" />
+         </children>
+      </Pane>
+   </children>
+</FlowPane>

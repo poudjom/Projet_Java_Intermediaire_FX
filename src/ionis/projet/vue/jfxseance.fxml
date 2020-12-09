@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0"
+      prefWidth="905.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ionis.projet.controller.Jfxseance">
+   <children>
+      <TableView fx:id="idTabSeance" layoutX="14.0" layoutY="67.0" onMouseClicked="#onMouseClicked" prefHeight="361.0" prefWidth="741.0">
+         <columns>
+            <TableColumn fx:id="colIdSeance" prefWidth="40.79998779296875" text="idSeance" visible="false" />
+            <TableColumn fx:id="colIdClasse" prefWidth="127.99996644258499" text="IdClasse" visible="false"/>
+            <TableColumn fx:id="colIdMatiere" prefWidth="53.599853515625" text="idMatiere" visible="false" />
+            <TableColumn fx:id="colClasse" prefWidth="127.99996644258499" text="Classe" />
+            <TableColumn fx:id="colMatiere" prefWidth="240.7999725341797" text="Matière" />
+            <TableColumn fx:id="colDateDebut" prefWidth="173.60003662109375" text="Date début" />
+            <TableColumn fx:id="colDateFin" minWidth="3.99993896484375" prefWidth="84.7999267578125" text="Date de fin" visible="false" />
+            <TableColumn fx:id="colHeureDebut" minWidth="3.99993896484375" prefWidth="77.59999084472656" text="Heure début" />
+            <TableColumn fx:id="colHeureFin" minWidth="3.99993896484375" prefWidth="82.4000244140625" text="Heure fin" />
+            <TableColumn fx:id="colCommentaire" prefWidth="250" text="Commentaire" />
+         </columns>
+      </TableView>
+      <Button fx:id="btCreer" layoutX="785.0" layoutY="73.0" mnemonicParsing="false" onAction="#onCreer" prefHeight="49.0" prefWidth="88.0" text="Créer" />
+      <Button fx:id="idModifier" layoutX="785.0" layoutY="135.0" mnemonicParsing="false" onAction="#onModifier" prefHeight="49.0" prefWidth="88.0" text="Modifier" />
+      <Button fx:id="btSupprimer" layoutX="785.0" layoutY="200.0" mnemonicParsing="false" onAction="#onSupprimer" prefHeight="49.0" prefWidth="88.0" text="Supprimer" />
+      <Button fx:id="btRafraichir" layoutX="785.0" layoutY="262.0" mnemonicParsing="false" onAction="#onRafraichir" prefHeight="49.0" prefWidth="88.0" text="Rafraichir" />
+   </children>
+</Pane>

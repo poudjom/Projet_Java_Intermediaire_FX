@@ -80,25 +80,36 @@ public class Matiere {
     }
 
     // Fonction pour la création d'une matière
-    public int createMatiere(Matiere matiere){
+    public int createMatiere(Matiere matiere) throws SQLException {
         DataMapping dataMapping = new DataMapping();
         String query;
+        int state = 0;
         query = "Insert into matiere (CODE, INTITULE, VOLUMEHORAIRE, DESCRIPTION) " +
-                "values('" + matiere.getCode() + "','" + matiere.getIntitule() + "'," + matiere.getVolumeHoraire() + ",'"
-                + matiere.getDescription() +"') ";
-        try {
-            return dataMapping.insertion(query);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-            return 0;
-        }
-        //System.out.println(query);
+                "values('" + matiere.code + "','" + matiere.intitule + "'," + matiere.volumeHoraire + ",'"
+                + matiere.description +"') ";
+        state = dataMapping.insertion(query);
+        dataMapping.closeConnexion();
+        return state;
     }
 
-    // Modification d'une matière
-//    public void modifierMatiere(Matiere matiere){
-//        DataMapping dataMapping = new DataMapping();
-//        String query;
-//        query = "Update Matiere set ";
-//    }
+     //Modification d'une matière
+    public int modifierMatiere(Matiere matiere) throws SQLException {
+        DataMapping dataMapping = new DataMapping();
+        String query;
+        int state = 0;
+        query = "Update matiere set CODE = '" + matiere.getCode() + "', INTITULE = '" + matiere.getIntitule() + "', VOLUMEHORAIRE = " + matiere.getVolumeHoraire()
+                + ", DESCRIPTION = '" + matiere.getDescription() + "'" + " Where IDMATIERE = " + matiere.getIdMatiere();
+        state = dataMapping.modification(query);
+        return state;
+    }
+
+    // Suppression d'une matière
+    public int supprimerMatiere(String idMatiere) throws SQLException {
+        DataMapping dataMapping = new DataMapping();
+        int state = 0;
+        String query;
+        query = "Delete from Matiere Where IDMATIERE in (" + idMatiere + ")";
+        state = dataMapping.suppression(query);
+        return state;
+    }
 }
