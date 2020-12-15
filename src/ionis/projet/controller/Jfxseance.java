@@ -155,5 +155,43 @@ public class Jfxseance implements Initializable {
     }
 
     public void onMouseClicked(MouseEvent mouseEvent) {
+        //if (idTabSeance.getSelectionModel().isEmpty() != false){
+            Jfxinscription.codeSeance = idTabSeance.getSelectionModel().getSelectedItem().getIdSeance();
+        //}
     }
+
+    public void onAbsence(ActionEvent actionEvent) throws IOException {
+        Stage creerSeance = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("../vue/jfxparticiper.fxml"));
+        creerSeance.setTitle("Absences");
+        creerSeance.setScene(new Scene(root, 900, 440));
+        creerSeance.show();
+    }
+
+    public void onInscrire(ActionEvent actionEvent) throws IOException {
+
+
+        Alert alert;
+        if (idTabSeance.getSelectionModel().getSelectedItems().stream().count() >= 1) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../vue/jfxinscription.fxml"));
+            Parent root1 = loader.load();
+            Jfxinscription jfxinscription = loader.getController();
+            jfxinscription.initVariable(idTabSeance.getSelectionModel().getSelectedItem());
+            Stage inscription = new Stage();
+            inscription.setTitle("Inscription des étudiants à des séances de cours");
+            inscription.setScene(new Scene(root1, 900, 440));
+            inscription.show();
+        }
+        else{
+            alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Attention");
+            alert.setHeaderText("");
+            alert.setContentText("Sélectionnez une séance avent");
+            alert.showAndWait();
+        }
+    }
+
+    //todo: Fonction de recherche des séances
+
+    //todo: Fonction d'impression des seances
 }

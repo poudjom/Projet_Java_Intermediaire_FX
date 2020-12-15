@@ -39,6 +39,10 @@ public class Seance {
         this.intituleClasse = intituleClasse;
     }
 
+    public Seance() {
+
+    }
+
     public int getIdSeance() {
         return idSeance;
     }

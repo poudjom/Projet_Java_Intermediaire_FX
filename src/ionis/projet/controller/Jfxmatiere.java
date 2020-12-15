@@ -147,4 +147,6 @@ public class Jfxmatiere implements Initializable {
             alert.showAndWait();
         }
     }
+
+    //todo: Fonction d'impression des matières
 }
