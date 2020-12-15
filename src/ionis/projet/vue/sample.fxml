@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="ionis.projet.controller.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ionis.projet.controller.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -15,9 +14,11 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Pane prefHeight="320.0" prefWidth="293.0">
+      <Pane prefHeight="440.0" prefWidth="393.0">
          <children>
-            <Button fx:id="btnClasse" layoutX="97.0" layoutY="137.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="100.0" text="Nouvelle Classe" />
+            <Button layoutX="128.0" layoutY="68.0" mnemonicParsing="false" onAction="#GestionClasse" prefHeight="46.0" prefWidth="137.0" text="Gérer les classes" />
+            <Button layoutX="128.0" layoutY="197.0" mnemonicParsing="false" onAction="#GestionEtudiant" prefHeight="46.0" prefWidth="137.0" text="Gérer les étudiants" />
+            <Button layoutX="128.0" layoutY="330.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="137.0" text="Nouvelle Classe" />
          </children>
       </Pane>
    </children>

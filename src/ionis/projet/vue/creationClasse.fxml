@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="479.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ionis.projet.controller.Classe">
+   <children>
+      <Label layoutX="57.0" layoutY="51.0" prefHeight="29.0" prefWidth="103.0" text="Code Classe">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="57.0" layoutY="119.0" prefHeight="17.0" prefWidth="96.0" text="Filière">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="170.0" prefHeight="29.0" prefWidth="103.0" text="Libellé">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCodeClasse" layoutX="186.0" layoutY="53.0" prefHeight="25.0" prefWidth="226.0" />
+      <TextField fx:id="txtFiliere" layoutX="186.0" layoutY="117.0" prefHeight="25.0" prefWidth="226.0" />
+      <TextArea fx:id="txtLibelle" layoutX="186.0" layoutY="185.0" prefHeight="69.0" prefWidth="226.0" />
+      <Button layoutX="248.0" layoutY="283.0" mnemonicParsing="false" onAction="#CreateClass" prefHeight="38.0" prefWidth="103.0" text="Créer" />
+   </children>
+</Pane>

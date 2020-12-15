@@ -10,7 +10,7 @@ public class DataMapping {
 
     // Dans le constructeur on défini les paramétres d'acces à la base de données et on effectue une connexion
     public DataMapping(){
-        this.host = "jdbc:mysql://localhost:3306/projet_java1?autoReconnect=true&useSSL=false";
+        this.host = "jdbc:mysql://localhost:3306/Projet_java1?autoReconnect=true&useSSL=false";
         this.uName = "root";
         this.uPass = "";
         try {

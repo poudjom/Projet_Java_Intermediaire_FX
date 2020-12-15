@@ -1,24 +1,19 @@
 package sample;
 
-import ionis.projet.model.DataMapping;
-import ionis.projet.controller.Matiere;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
-
-import java.net.URL;
-import java.sql.ResultSet;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../ionis/projet/vue/sample.fxml"));
-        primaryStage.setTitle("Création des classes");
-        primaryStage.setScene(new Scene(root, 293, 320));
+        primaryStage.setTitle("Gestion de l'école");
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
         primaryStage.setResizable(false);
 
@@ -61,6 +56,7 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+
         launch(args);
     }
 }
