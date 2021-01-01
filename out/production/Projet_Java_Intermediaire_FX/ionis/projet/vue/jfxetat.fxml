@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ionis.projet.controller.Jfxetat">
+   <children>
+      <TableView fx:id="idTabInscrire" editable="true" layoutX="14.0" layoutY="67.0" onMouseClicked="#onMouseClicked" prefHeight="361.0" prefWidth="733.0">
+         <columns>
+            <TableColumn fx:id="colIdSeance" prefWidth="40.79998779296875" text="idSeance" visible="false" />
+            <TableColumn fx:id="colIdClasse" prefWidth="53.599853515625" text="idClasse" visible="false" />
+            <TableColumn fx:id="colMatricule" editable="false" prefWidth="96.7999906539917" text="Matricule" />
+            <TableColumn fx:id="colNom" editable="false" prefWidth="367.99998474121094" text="Nom &amp; Prénom" />
+            <TableColumn fx:id="colClasse" editable="false" minWidth="3.99993896484375" prefWidth="158.4000244140625" text="Classe" />
+            <TableColumn fx:id="colEtat" prefWidth="118.39996337890625" text="Nombre H." />
+         </columns>
+
+      </TableView>
+      <Button fx:id="btValider" layoutX="783.0" layoutY="239.0" mnemonicParsing="false" onAction="#onValider" prefHeight="49.0" prefWidth="88.0" text="Valider" />
+      <TextField fx:id="idRechercher" layoutX="17.0" layoutY="38.0" onKeyPressed="#onrecherche" prefHeight="24.0" prefWidth="171.0" promptText="Rechercher">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <Label fx:id="idMatiere" layoutX="279.0" layoutY="39.0" prefHeight="24.0" prefWidth="153.0" style="-fx-background-color: #28e40b;" text="Label" textFill="#121312" visible="false" />
+      <Label layoutX="761.0" layoutY="67.0" text="Classe">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idDate" layoutX="443.0" layoutY="39.0" prefHeight="24.0" prefWidth="144.0" style="-fx-background-color: #28e40b;" text="Label" textFill="#121312" visible="false" />
+      <Label layoutX="443.0" layoutY="19.0" text="Date" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idPeriode" layoutX="599.0" layoutY="38.0" prefHeight="24.0" prefWidth="144.0" style="-fx-background-color: #28e40b;" text="Label" textFill="#121312" visible="false" />
+      <Label layoutX="599.0" layoutY="18.0" text="Période" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idSeance" layoutX="24.0" layoutY="7.0" prefHeight="24.0" prefWidth="72.0" promptText="seance" visible="false">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idmatiere" layoutX="116.0" layoutY="7.0" prefHeight="24.0" prefWidth="72.0" promptText="idmatiere" visible="false">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="txtClasse" layoutX="761.0" layoutY="86.0" prefHeight="25.0" prefWidth="131.0" promptText="Classe" />
+      <DatePicker fx:id="idDateFin" layoutX="761.0" layoutY="197.0" prefHeight="25.0" prefWidth="131.0" />
+      <DatePicker fx:id="idDateDebut" layoutX="760.0" layoutY="144.0" prefHeight="25.0" prefWidth="131.0" />
+      <Label layoutX="763.0" layoutY="125.0" prefHeight="17.0" prefWidth="44.0" text="Du" />
+      <Label layoutX="764.0" layoutY="179.0" prefHeight="17.0" prefWidth="44.0" text="Au" />
+   </children>
+</Pane>
