@@ -18,9 +18,9 @@
             <Label alignment="CENTER_RIGHT" layoutX="42.0" layoutY="137.0" text="Date de fin*" visible="false" />
             <Label layoutX="18.0" layoutY="170.0" text="Heure de début*" />
             <TextField fx:id="idHeureDebut" layoutX="117.0" layoutY="166.0" prefHeight="25.0" prefWidth="69.0" promptText="        :  " />
-            <Button fx:id="btCreerValidation" layoutX="138.0" layoutY="283.0" mnemonicParsing="false" onAction="#onCreerValidation" text="Créer" />
+            <Button fx:id="btCreerValidation" layoutX="138.0" layoutY="316.0" mnemonicParsing="false" onAction="#onCreerValidation" text="Créer" />
             <TextField fx:id="id" layoutX="106.0" layoutY="25.0" visible="false" />
-            <Button fx:id="idModifierValidation" layoutX="217.0" layoutY="283.0" mnemonicParsing="false" onAction="#onModifierValidation" text="Modifier" />
+            <Button fx:id="idModifierValidation" layoutX="217.0" layoutY="316.0" mnemonicParsing="false" onAction="#onModifierValidation" text="Modifier" />
             <Pane layoutX="-1.0" prefHeight="34.0" prefWidth="400.0" style="-fx-background-color: #04B431;">
                <children>
                   <Label fx:id="idEntete" layoutX="151.0" layoutY="9.0" text="Séance" textFill="WHITE">
@@ -33,13 +33,18 @@
             <ComboBox fx:id="idMatiere" layoutX="117.0" layoutY="93.0" prefHeight="25.0" prefWidth="189.0" promptText="Sélectionner une matière" />
             <Label layoutX="18.0" layoutY="208.0" text="Heure de début*" />
             <TextField fx:id="idHeureFin" layoutX="117.0" layoutY="204.0" prefHeight="25.0" prefWidth="69.0" promptText="        :  " />
-            <Label alignment="CENTER_RIGHT" layoutX="28.0" layoutY="242.0" text="Commentaires" />
-            <TextField fx:id="idCommentaire" layoutX="116.0" layoutY="238.0" prefHeight="25.0" prefWidth="230.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="28.0" layoutY="275.0" text="Commentaires" />
+            <TextField fx:id="idCommentaire" layoutX="116.0" layoutY="271.0" prefHeight="25.0" prefWidth="230.0" />
             <DatePicker fx:id="idDateDebut" layoutX="117.0" layoutY="131.0" />
             <DatePicker fx:id="idDateFin" layoutX="118.0" layoutY="133.0" visible="false" />
             <TextField fx:id="idSeance" layoutX="312.0" layoutY="99.0" prefHeight="25.0" prefWidth="69.0" visible="false" />
             <Label alignment="CENTER_RIGHT" layoutX="64.0" layoutY="60.0" text="Classe*" />
             <ComboBox fx:id="idClasse" layoutX="115.0" layoutY="56.0" prefHeight="25.0" prefWidth="189.0" promptText="Sélectionner une classe" />
+            <Label layoutX="22.0" layoutY="242.0" text="Nombre Heure*" />
+            <TextField fx:id="idNbreHeure" layoutX="119.0" layoutY="238.0" prefHeight="25.0" prefWidth="69.0" />
+            <Label layoutX="148.0" layoutY="170.0" text="Heures" visible="false" />
+            <TextField fx:id="idMinutesDebut" layoutX="188.0" layoutY="166.0" prefHeight="25.0" prefWidth="29.0" promptText="        :  " visible="false" />
+            <Label layoutX="220.0" layoutY="172.0" text="Minutes" visible="false" />
          </children>
       </Pane>
    </children>

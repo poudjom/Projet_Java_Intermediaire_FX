@@ -11,6 +11,9 @@ import javafx.scene.control.*;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -27,6 +30,9 @@ public class Formseance implements Initializable {
     public Button idModifierValidation;
     public Label idEntete;
     public ComboBox idClasse;
+    public TextField idNbreHeure;
+    public TextField idMinutesDebut;
+    public Float nbreHeure;
 
     ObservableList<Matiere> observableList = FXCollections.observableArrayList();
     ObservableList<String> matierelist = FXCollections.observableArrayList();
@@ -78,6 +84,7 @@ public class Formseance implements Initializable {
         idHeureDebut.setText(seance.getHeureDebut());
         idHeureFin.setText(seance.getHeureFin());
         idDateDebut.setValue(seance.getDateDebut());
+        idNbreHeure.setText(String.valueOf(seance.getNbreHeure()));
         idModifierValidation.setDisable(false);
         btCreerValidation.setDisable(true);
         idMatiere.getSelectionModel().select(listMatiereChargement.get(seance.getIdMatiere()).intValue());
@@ -90,11 +97,16 @@ public class Formseance implements Initializable {
         Alert alert;
         String query;
         DataMapping dataMapping = new DataMapping();
+        nbreHeure = ((Float.valueOf(idNbreHeure.getText()) * 60) + Float.valueOf(idMinutesDebut.getText())) / 60;
+
         try {
-            query = "Insert into seance (IDMATIERE, DATEDEBUT,HEUREDEBUT, HEUREFIN, COMMENTAIRE, IDCLASSE) " +
+            query = "Insert into seance (IDMATIERE, DATEDEBUT,HEUREDEBUT, HEUREFIN, COMMENTAIRE, IDCLASSE, NBREHEURE, DATEFIN) " +
                     "values (" + listMatiereCRUD.get(idMatiere.getSelectionModel().getSelectedIndex()) +
                     ",'"+idDateDebut.getValue()+"','" +idHeureDebut.getText()+"','" + idHeureFin.getText() +"','"
-                    + idCommentaire.getText() +"'," + listClasseCRUD.get(idClasse.getSelectionModel().getSelectedIndex()) + ")";
+                    + idCommentaire.getText() +"',"
+                    + listClasseCRUD.get(idClasse.getSelectionModel().getSelectedIndex()) + ","
+                    + idNbreHeure.getText() + ",'" + idDateDebut.getValue() +"')";
+            System.out.println(query);
             status = dataMapping.insertion(query);
             dataMapping.closeConnexion();
             if (status == 1){
@@ -127,6 +139,7 @@ public class Formseance implements Initializable {
                     + ", DATEDEBUT = '"+idDateDebut.getValue()+"',HEUREDEBUT = '" + idHeureDebut.getText() +
                     "', HEUREFIN = '" + idHeureFin.getText() + "', COMMENTAIRE = '" + idCommentaire.getText() +"' " +
                     ", idclasse = " + listClasseCRUD.get(idClasse.getSelectionModel().getSelectedIndex()) +
+                    ", NBREHEURE = " + idNbreHeure.getText() +
                     " Where idSeance = " + idSeance.getText();
             //System.out.println(query);
             status = dataMapping.modification(query);

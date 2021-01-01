@@ -13,8 +13,10 @@ public class Seance {
     private String commentaire;
     private String intituleMatiere;
     private String intituleClasse;
+    private float nbreHeure;
 
-    public Seance(int idSeance, int idMatiere, int idClasse, LocalDate dateDebut, LocalDate dateFin, String heureDebut, String heureFin, String commentaire, String intituleMatiere, String intituleClasse) {
+    public Seance(int idSeance, int idMatiere, int idClasse, LocalDate dateDebut, LocalDate dateFin, String heureDebut,
+                  String heureFin, String commentaire, String intituleMatiere, String intituleClasse, float nbreHeure) {
         this.idSeance = idSeance;
         this.idMatiere = idMatiere;
         this.idClasse = idClasse;
@@ -25,9 +27,11 @@ public class Seance {
         this.commentaire = commentaire;
         this.intituleMatiere = intituleMatiere;
         this.intituleClasse = intituleClasse;
+        this.nbreHeure = nbreHeure;
     }
 
-    public Seance(int idMatiere, int idClasse, LocalDate dateDebut, LocalDate dateFin, String heureDebut, String heureFin, String commentaire, String intituleMatiere, String intituleClasse) {
+    public Seance(int idMatiere, int idClasse, LocalDate dateDebut, LocalDate dateFin, String heureDebut, String heureFin,
+                  String commentaire, String intituleMatiere, String intituleClasse, float nbreHeure) {
         this.idMatiere = idMatiere;
         this.idClasse = idClasse;
         this.dateDebut = dateDebut;
@@ -37,6 +41,7 @@ public class Seance {
         this.commentaire = commentaire;
         this.intituleMatiere = intituleMatiere;
         this.intituleClasse = intituleClasse;
+        this.nbreHeure = nbreHeure;
     }
 
     public Seance() {
@@ -123,4 +128,8 @@ public class Seance {
     public void setIntituleClasse(String intituleClasse) {
         this.intituleClasse = intituleClasse;
     }
+
+    public float getNbreHeure() { return nbreHeure; }
+
+    public void setNbreHeure(float nbreHeure) { this.nbreHeure = nbreHeure; }
 }

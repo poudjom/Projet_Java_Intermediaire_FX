@@ -21,7 +21,6 @@ public class Controller {
         ecranMatiere.setScene(new Scene(root, 700, 500));
         ecranMatiere.show();
 //        String d1,d2;
-//
 //        DateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 //        Date date = new Date();
 //        d1 = format.format(date) + " 15:10";

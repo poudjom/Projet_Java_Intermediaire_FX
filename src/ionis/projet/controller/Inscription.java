@@ -15,8 +15,10 @@ public class Inscription extends Seance {
     private int idClasse;
     private String etat;
 
-    public Inscription(int idSeance, int idMatiere, int idClasse, LocalDate dateDebut, LocalDate dateFin, String heureDebut, String heureFin, String commentaire, String intituleMatiere, String intituleClasse, String matricule, String nom, String prenom, String email, int etat) {
-        super(idSeance,idMatiere,dateDebut,dateFin,heureDebut,heureFin,commentaire,intituleMatiere,intituleClasse);
+    public Inscription(int idSeance, int idMatiere, int idClasse, LocalDate dateDebut, LocalDate dateFin, String heureDebut,
+                       String heureFin, String commentaire, String intituleMatiere, String intituleClasse, String matricule,
+                       String nom, String prenom, String email, int etat, int nbreHeure) {
+        super(idSeance,idMatiere,dateDebut,dateFin,heureDebut,heureFin,commentaire,intituleMatiere,intituleClasse, nbreHeure);
         this.matricule = matricule;
         this.nom = nom;
         this.prenom = prenom;
@@ -45,6 +47,20 @@ public class Inscription extends Seance {
         }else{
             this.etat = "Absent";
         }
+    }
+
+    public Inscription(int idClasse, String intituleClasse, String matricule, String nom, String prenom, String email,
+                       String codeClasse, String telephone, String filiere, String etat) {
+        this.idClasse = idClasse;
+        this.intituleClasse = intituleClasse;
+        this.matricule = matricule;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.codeClasse = codeClasse;
+        this.telephone = telephone;
+        this.filiere = filiere;
+        this.etat = etat;
     }
 
     public String getIntituleClasse() {

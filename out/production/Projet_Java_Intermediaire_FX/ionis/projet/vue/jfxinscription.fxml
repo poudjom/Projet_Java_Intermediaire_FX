@@ -21,6 +21,7 @@
             <TableColumn fx:id="colNom" editable="false" prefWidth="367.99998474121094" text="Nom &amp; Prénom" />
             <TableColumn fx:id="colClasse" editable="false" minWidth="3.99993896484375" prefWidth="192.0" text="Classe" />
             <TableColumn fx:id="colEtat" prefWidth="84.00006103515625" text="Etat" />
+            <TableColumn fx:id="colNote" editable="false" prefWidth="84.00006103515625" text="Commentaire" />
          </columns>
          <contextMenu>
             <ContextMenu>

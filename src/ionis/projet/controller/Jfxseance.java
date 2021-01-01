@@ -41,6 +41,8 @@ public class Jfxseance implements Initializable {
     public TableView<Seance> idTabSeance;
     public TableColumn<Seance, String> colClasse;
     public TableColumn<Seance, Integer>  colIdClasse;
+    public TableColumn<Seance, Float> colNbreHeure;
+    public Button btEtat;
 
     ObservableList<Seance> observableList = FXCollections.observableArrayList();
 
@@ -65,7 +67,8 @@ public class Jfxseance implements Initializable {
                         rs.getInt("idclasse"), rs.getDate("datedebut").toLocalDate(),
                         rs.getDate("datefin").toLocalDate(), rs.getString("heuredebut"),
                         rs.getString("heurefin"),rs.getString("commentaire"),
-                        rs.getString("intitule"),rs.getString("codeclasse")));
+                        rs.getString("intitule"),rs.getString("codeclasse"),
+                        rs.getFloat("NBREHEURE")));
             }
         } catch (SQLException throwables) {
             Logger.getLogger(Jfxmatiere.class.getName()).log(Level.SEVERE, null, throwables);
@@ -79,6 +82,7 @@ public class Jfxseance implements Initializable {
         colHeureFin.setCellValueFactory(new PropertyValueFactory<>("heureFin"));
         colCommentaire.setCellValueFactory(new PropertyValueFactory<>("commentaire"));
         colClasse.setCellValueFactory(new PropertyValueFactory<>("intituleClasse"));
+        colNbreHeure.setCellValueFactory(new PropertyValueFactory<>("nbreHeure"));
         idTabSeance.setItems(observableList);
         idTabSeance.refresh();
         try {
@@ -97,7 +101,7 @@ public class Jfxseance implements Initializable {
             formmatiere.chargerSeance(idTabSeance.getSelectionModel().getSelectedItem());
             Stage creerSeance = new Stage();
             creerSeance.setTitle("Séance");
-            creerSeance.setScene(new Scene(root1, 400, 340));
+            creerSeance.setScene(new Scene(root1, 400, 375));
             creerSeance.show();
         }
         else{
@@ -112,8 +116,8 @@ public class Jfxseance implements Initializable {
     public void onCreer(ActionEvent actionEvent) throws IOException {
         Stage creerSeance = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../vue/form_seance.fxml"));
-        creerSeance.setTitle("Matière");
-        creerSeance.setScene(new Scene(root, 400, 340));
+        creerSeance.setTitle("Séance");
+        creerSeance.setScene(new Scene(root, 400, 375));
         creerSeance.show();
     }
 
@@ -189,6 +193,17 @@ public class Jfxseance implements Initializable {
             alert.setContentText("Sélectionnez une séance avent");
             alert.showAndWait();
         }
+    }
+
+    public void onEtat(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../vue/jfxetat.fxml"));
+        Parent root1 = loader.load();
+        //Jfxinscription jfxinscription = loader.getController();
+        //jfxinscription.initVariable(idTabSeance.getSelectionModel().getSelectedItem());
+        Stage etat = new Stage();
+        etat.setTitle("Etat");
+        etat.setScene(new Scene(root1, 900, 470));
+        etat.show();
     }
 
     //todo: Fonction de recherche des séances

@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
@@ -43,7 +44,6 @@ public class Jfxinscription implements Initializable {
     public static int codeSeance;
     public MenuItem mItemPresence;
     public MenuItem mItemAbsence;
-
 
     ObservableList<Inscription> observableList = FXCollections.observableArrayList();
     Map<Integer,Integer> listClasseCRUD = new HashMap<>();
